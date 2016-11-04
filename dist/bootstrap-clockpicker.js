@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/weareoutman/clockpicker/blob/gh-pages/LICENSE)
  */
 
-;(function(){
+(function(){
 	var $ = window.jQuery,
 		$win = $(window),
 		$doc = $(document),
@@ -167,6 +167,16 @@
 		this.spanAmPm = popover.find('.clockpicker-span-am-pm');
 		this.amOrPm = "";
 		this.currentPlacementClass = options.placement;
+
+		// Change dimensions
+		if(options.dimensions) {
+			dialRadius = options.dimensions.dialRadius;
+			outerRadius = options.dimensions.outerRadius;
+			innerRadius = options.dimensions.innerRadius;
+			tickRadius = options.dimensions.tickRadius;
+
+			diameter = dialRadius * 2;
+		}
 
 		popover.toggleClass('clockpicker-popover-inline', options.inline);
 		amPmBlock.toggleClass('clockpicker-am-pm-block-hidden', !options.twelveHour);

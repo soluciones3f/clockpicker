@@ -168,6 +168,16 @@
 		this.amOrPm = "";
 		this.currentPlacementClass = options.placement;
 
+		// Change dimensions
+		if(options.dimensions) {
+			dialRadius = options.dimensions.dialRadius;
+			outerRadius = options.dimensions.outerRadius;
+			innerRadius = options.dimensions.innerRadius;
+			tickRadius = options.dimensions.tickRadius;
+
+			diameter = dialRadius * 2;
+		}
+
 		popover.toggleClass('clockpicker-popover-inline', options.inline);
 		amPmBlock.toggleClass('clockpicker-am-pm-block-hidden', !options.twelveHour);
 		spanBlank.html(options.blankTitle);
