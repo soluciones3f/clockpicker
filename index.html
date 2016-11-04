@@ -251,6 +251,18 @@ $('#check-minutes').click(function(e){
 			</code>
 		</pre>
 	</div>
+	<div class="form-group">
+		<h4>Inline without input:</h4>
+		<div class="clearfix">
+			<div id="inline-noinput" data-inline="true" data-no-input="true"></div>
+		</div>
+		
+		<pre class="hljs-pre"><code class="html">&lt;div id=&quot;inline-noinput&quot; data-inline=&quot;true&quot; data-no-input=&quot;true&quot;&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+	$(&quot;#inline-noinput&quot;).clockpicker();
+&lt;/script&gt;</code></pre>
+	</div>
 
 	<h3>Options</h3>
 	<table class="table table-bordered table-striped">
@@ -415,6 +427,9 @@ $('.clockpicker').clockpicker()
 	.find('input').change(function(){
 		console.log(this.value);
 	});
+
+$("#inline-noinput").clockpicker();
+
 var input = $('#single-input').clockpicker({
 	placement: 'bottom',
 	align: 'left',
